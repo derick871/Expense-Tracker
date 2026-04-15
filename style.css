@@ -5,7 +5,7 @@
     font-family:Arial;
 }
 body{
-    background-color: #f4f4f4;
+    background-color: #f1f3f5;
     color: #000;
     display: flex;
     flex-direction: column;
@@ -44,4 +44,12 @@ p{
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 400px;
+}
+.tracker{
+    background-color: #856d6d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
 }
