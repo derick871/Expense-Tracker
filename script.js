@@ -55,6 +55,19 @@ console.log(totalfoodExpenses);
 const totalutensilsExpenses = expenses.reduce((total, exp) => 25000 - exp.amount, 0);
 console.log(totalutensilsExpenses);
 
+let btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
+  alert("Expense added successfully!");
+});console.log("Expense added successfully!");
+
+// 1. Reference elements
+const expenseForm = document.getElementById('expense-form');
+const descriptionInput = document.getElementById('description');
+const amountInput = document.getElementById('amount');
+const categoryInput = document.getElementById('category');
+console.log(expenseForm, descriptionInput, amountInput, categoryInput);
+
+
     
 
 

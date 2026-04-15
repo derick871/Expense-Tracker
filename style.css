@@ -18,3 +18,30 @@ h1{
     color:salmon;
     font: bold 24px Arial;
 }
+p{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font: bold 18px Arial;
+}
+#btn{
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font: bold 16px Arial;
+    padding: 10px 20px;
+}
+#btn:hover{
+    background-color: darkblue;
+}
+.container{
+    background-color:sandybrown;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}

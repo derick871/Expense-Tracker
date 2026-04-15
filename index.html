@@ -8,9 +8,10 @@
     <script src="script.js"></script>
 </head theme:dark>
 <body>
+    <div>
     <h1>Expense Tracker</h1>
     <p>Welcome to your Expense Tracker!</p><br>
-    <div>
+    <div class="container">
         <form action="main.html" method="post">
             <label for="Date of expense">Date of Expense:</label>
             <input type="date" id="Date of expense" placeholder="Enter expense date"><br><br>
@@ -29,8 +30,10 @@
             <label for="Payment method">Payment Method:</label>
             <input type="text" id="Payment method" placeholder="Enter payment method"><br><br>
             <label for="Description">Description:</label>
-            <input type="text" id="Description" placeholder="Enter expense description">
+            <input type="text" id="Description" placeholder="Enter expense description"><br><br>
         </form>
+        <button type="submit" id="btn" onclick="showAlert('Expense added successfully!')()">Add Expense</button>
+    </div>
     </div>
     
 
