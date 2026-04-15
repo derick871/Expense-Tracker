@@ -8,13 +8,11 @@ export class Expense {
     this.date = date;
   }
 }
-const expenseForm = document.getElementById('expense-form');
-const expenseList = document.getElementById('expense-list');
-const expenses = [];
+const expense = new Expense(1000,-("Food", "Dinner at restaurant"));
+console.log(expense);
+
 
 // expenseManager.js
-import { Expense } from "./expense.js";
-
 export class ExpenseManager {
   constructor() {
     this.expenses = [];
@@ -27,42 +25,36 @@ export class ExpenseManager {
     this.expenses = [...this.expenses, newExpense]; // spread
     return newExpense;
   }
-
-  getAllExpenses() {
-    return [...this.expenses];
-  }
-
-  deleteExpense(id) {
-    this.expenses = this.expenses.filter(exp => exp.id !== id);
-  }
-
-  getTotalExpensesByDate(date) {
-    return this.expenses
-      .filter(exp => exp.date.toDateString() === new Date(date).toDateString())
-      .reduce((total, exp) => total + exp.amount, 0);
-  }
-
-  getExpensesByCategory(category) {
-    return this.expenses.filter(exp => exp.category === category);
-  }
+  
 }
+const expenses =[
+    {id: 1, amount: 1000, category: "lunch", description: "lunch in restaurant", date: new Date()},
+    {id: 2, amount: 1500, category: "Food", description: "sugar;25kg ", date: new Date()},
+    {id: 3, amount: 1200, category: "Food", description: "flour;10kg ", date: new Date()},
+    {id: 4, amount: 300, category: "Food", description: "bread;5kg", date: new Date()},
+    {id: 5, amount: 500, category: "Food", description: "meat;2kg", date: new Date()},
+    {id: 6 , amount: 700, category: "Food", description: " cooking oil;3litres", date: new Date()},
+    {id: 7, amount: 500, category: "utensils", description: "plates;10pieces", date: new Date()},
+    {id: 8, amount: 1000, category: "utensils", description: "cups;20pieces", date: new Date()},
+    {id: 9, amount: 2000, category: "utensils", description: "cooking pan;3pieces", date: new Date()},
+    {id: 10, amount: 1500, category: "gas cylinder", description: "Buy:gas cylinder,1unit", date: new Date()},
+    {id: 11, amount: 500, category: "Transport", description: "Bus fare", date: new Date()},
+    {id: 12, amount: 200, category: "Entertainment", description: "Movie ticket", date: new Date()},
+    {id: 13, amount: 15000, category: "rent", description: "monthly rent", date: new Date()}
+];
+console.log(expenses);
+const totalExpenses = expenses.reduce((total, exp) => 80000 - exp.amount, 0);
+console.log(totalExpenses);
+//filter expense by category
+const foodExpenses = expenses.filter(exp => exp.category === "Food");
+console.log(foodExpenses);
 
-const expense = manager.addExpense(500, "Food", "Lunch");
+const totalfoodExpenses = expenses.reduce((total, exp) => 50000 - exp.amount, 0);
+console.log(totalfoodExpenses);
 
-const { amount, category } = expense;
-console.log(amount, category);
+const totalutensilsExpenses = expenses.reduce((total, exp) => 25000 - exp.amount, 0);
+console.log(totalutensilsExpenses);
 
-// app.js
-import { ExpenseManager } from "./expenseManager.js";
+    
 
-const manager = new ExpenseManager();
 
-window.addExpense = function () {
-  const amount = Number(document.getElementById("amount").value);
-  const category = document.getElementById("category").value;
-  const description = document.getElementById("description").value;
-
-  manager.addExpense(amount, category, description);
-
-  renderExpenses();
-};
